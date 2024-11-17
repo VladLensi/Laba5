@@ -8,7 +8,7 @@ class TeamMember(ABC):
 
     @abstractmethod
     def get_details(self):
-        """Метод для отримання деталей про члена команди"""
+        """Абстрактний метод для отримання деталей про члена команди"""
         pass
 
 
@@ -19,7 +19,7 @@ class Player(TeamMember):
         self.skills = skills
 
     def get_details(self):
-        """Реалізував мето для отримання деталей про гравця"""
+        """Реалізація методу для отримання деталей про гравця"""
         return f"{self.role}: {self.name}, Навички: {', '.join(self.skills)}"
 
 
@@ -30,7 +30,7 @@ class Coach(TeamMember):
         self.specialization = specialization
 
     def get_details(self):
-        """Метод для отримання деталей про тренера"""
+        """Реалізація методу для отримання деталей про тренера"""
         return f"{self.role}: {self.name}, Спеціалізація: {self.specialization}"
 
 
@@ -41,5 +41,5 @@ class Staff(TeamMember):
         self.position = position
 
     def get_details(self):
-        """Метод для отримання деталей про персонал"""
+        """Реалізація методу для отримання деталей про персонал"""
         return f"{self.role}: {self.name}, Посада: {self.position}"
