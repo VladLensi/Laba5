@@ -1,8 +1,8 @@
-from scr import Player
-from scr.TeamMember import TeamMember
+# from scr import Player
+#from scr.TeamMember import TeamMember
 
 
-class Team:
+class team:
     def __init__(self, name):
         self.name = name
         self.members = []  # Список членів команди
