@@ -49,45 +49,58 @@ def PrintMenu():
     print("0. Вийти з програми.")
 
 def main():
+    print("Вітаємо в симуляції менеджера кіберспортивної команди!")
 
-    print("Вітаємо в симуляції менеджера кіберспортивної команди!\n\n")
-
-    tryes = 0
+    tries = 0
 
     money = 10000
     morality = 10
 
     while True:
-        
+
         PrintMenu()
 
-        userInput = input("\nОберіть опцію:")#\n для читабельності зробив
+        userInput = input("\nОберіть опцію:")  # \n для читабельності зробив
 
-        if userInput == '1':
+        # Перевірка, чи ввів користувач число
+        if not userInput.isdigit():
+            print("Ми ж з вами серйозні люди? Введіть цифрове значення від 0 до 10.")
+            tries += 1
+            if tries > 3:
+                print("\nАх ти... Тримай маслину! -1000$")
+                print("Будеш знати!")
+                money -= 1000
+                tries = 4
+                print(f"\nВаш баланс: {money}$.")
+            continue
+
+        userInput = int(userInput)
+
+        if userInput == 1:
             print("\nTут буде функціонал.")
 
-        elif userInput == '2':
+        elif userInput == 2:
             print("\nTут буде функціонал.")
 
-        elif userInput == '3':
+        elif userInput == 3:
             print("\nTут буде функціонал.")
 
-        elif userInput == '4':
+        elif userInput == 4:
             print(f"\nВаш баланс: {money}$.")
-            
-        elif userInput == '0':
+
+        elif userInput == 0:
             print("\nДякую за використання програми!.")
             print("Виконується вихід...")
             break
 
         else:
-            print("Ми ж з вами серйозні люди? Введіть чифрове значення від 0 до 10.")
-            tryes + 1
-            if tryes > 3:
+            print("Вибрана невірна опція, спробуйте ще раз.")
+            tries += 1
+            if tries > 3:
                 print("\nАх ти... Тримай маслину! -1000$")
                 print("Будеш знати!")
-                money - 1000
-                tryes = 4
+                money -= 1000  # Виправлено
+                tries = 4
                 print(f"\nВаш баланс: {money}$.")
 
 if __name__ == "__main__":
