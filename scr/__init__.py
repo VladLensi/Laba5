@@ -1,11 +1,11 @@
 from ast import main
 from TeamMember import Player, Coach, Staff
-from Team import team
+from Team import Team
 # from tournament import Tournament
 # from sponsor import Sponsor
 # from training_program import TrainingProgram
 
-my_team = team("Cyber Titans")
+my_team = Team("Cyber Titans")
 player1 = Player("Alex", ["Sniping", "Strategy"])
 coach = Coach("Chris", "Aggressive Style")
 analyst = Staff("Taylor", "Analyst")
@@ -30,7 +30,7 @@ my_team.recruit_member(analyst)
 print(my_team.analyze_performance())
 
 # деталі команди
-for detail in my_team.get_team_details():
+for detail in my_team.get_team_details:
     print(detail)
 
 def PrintMenu():
